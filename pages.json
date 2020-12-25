@@ -1,0 +1,35 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "home"
+			}
+		},
+		{
+			"path":"pages/living-room/living-room",
+			"style": {
+				"navigationBarTitleText": "living-room"
+			}
+		},
+		{
+			"path":"pages/kitchen/kitchen",
+			"style": {
+				"navigationBarTitleText": "kitchen"
+			}
+		},
+		{
+			"path":"pages/bath-room/bath-room",
+			"style": {
+				"navigationBarTitleText": "bath-room"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "吾家",
+		"navigationStyle":"custom",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
