@@ -1,27 +1,12 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
 		{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "home"
-			}
-		},
-		{
-			"path":"pages/living-room/living-room",
-			"style": {
-				"navigationBarTitleText": "living-room"
-			}
-		},
-		{
-			"path":"pages/kitchen/kitchen",
-			"style": {
-				"navigationBarTitleText": "kitchen"
-			}
-		},
-		{
-			"path":"pages/bath-room/bath-room",
-			"style": {
-				"navigationBarTitleText": "bath-room"
+				"navigationBarTitleText": "吾家"
 			}
 		}
 	],

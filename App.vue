@@ -1,50 +1,56 @@
 <script>
-	import {getAccessToken,refreshAccessToken} from '@/api/accessToken/index.js'
-	import {getUserInfo} from '@/api/userInfo/index.js'
-	import {getSingleDeviceDatas} from '@/api/device/index.js'
+	import loadFont from '@/utils/loadFont/index.js'
 	export default {
-		globalData: {  
-
+		data:{
+			//轮询定时器ID
+			intervalID: '',
+		},
+		methods:{
+			init(){
+				
+			}
 		},
 		onLaunch: function() {
-			// uni.getStorage({
-			// 	key: 'ACCOUNT_INFO',
-			// 	success: (res)=>{
-			// 		console.log("storage中有accountInfo",JSON.parse(res.data));
-			// 		this.$store.commit('SET_ACCOUNT_INFO',JSON.parse(res.data))
-			// 		getUserInfo().then(res=>{
-			// 			console.log("获取用户信息",res)
-			// 			this.$store.commit('SET_USER_INFO',res)
-			// 		}).catch(err=>{})
-					
-			// 		getSingleDeviceDatas().then(res=>{
-			// 			console.log("获取单个设备信息",res)
-			// 		})
-			// 	},
-			// 	fail: ()=>{
-			// 		console.log("storage中没有accountInfo");
-			// 		getAccessToken().then(res=>{
-			// 			uni.setStorage({
-			// 			    key: 'ACCOUNT_INFO',
-			// 			    data: JSON.stringify(res),
-			// 			});
-			// 			this.$store.commit('SET_ACCOUNT_INFO',res)
-			// 		}).catch(err=>{})
-			// 	}
-			// });
+			//加载字体
+			loadFont()
+			this.$store.dispatch('login').then(res=>{
+				console.log("登录成功")
+			})
 		},
 		onShow: function() {
-			console.log('App Show')
+			console.log("page show")
+			// this.$store.commit('SET_POLLING',true)
 		},
 		onHide: function() {
-			console.log('App Hide')
+			console.log("page hide")
+			// this.$store.commit('SET_POLLING',false)
+		},
+		watch:{
+			'$store.state.hasPolling':{
+			  handler: function(newVal){
+				  if(this.$store.state.hasPolling){
+					  console.log("开始轮询")
+					  this.intervalID = setInterval(()=>{
+					  	console.log("轮询发生")
+					  	this.$store.dispatch('getDeviceData')
+					  },5000)
+				  }else{
+					  console.log("停止轮询")
+					  clearInterval(this.intervalID)
+				  }
+			  },
+			  immediate: true
+			}
 		}
 	}
 </script>
 
-<style>
-	/*每个页面公共css */
+<style lang="scss">
+	@import "uview-ui/index.scss";
+	@import './style/normalize.scss';
+	@import './static/iconfont/iconfont';
 	page{
 		height: 100%;
+		overflow: scroll;
 	}
 </style>

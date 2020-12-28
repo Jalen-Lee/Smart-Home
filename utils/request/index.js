@@ -8,7 +8,7 @@ const http = new request()
  * config 为默认全局
  */ 
 http.setConfig((config) => { 
-    config.baseURL = 'http://api.tlink.io/'
+    config.baseURL = 'https://api.tlink.io/'
     return config
 })
 
@@ -34,8 +34,6 @@ http.interceptors.request.use((config) => { // 可使用async await 做异步操
 
 /*响应拦截器*/
 http.interceptors.response.use((response) => { 
-	
-  console.log("响应",response)
   return response.data
 }, (response) => { /*  对响应错误做点什么 （statusCode !== 200）*/
   console.log(response)

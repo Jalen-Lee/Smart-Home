@@ -1,4 +1,10 @@
 {
-  "navigationBarTitleText": "home",
-  "usingComponents": {}
+  "navigationBarTitleText": "吾家",
+  "usingComponents": {
+    "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
+    "u-section": "/node-modules/uview-ui/components/u-section/u-section",
+    "place-picker": "/conpoments/place-picker/index",
+    "device-card": "/conpoments/device-card/index",
+    "u-circle-progress": "/node-modules/uview-ui/components/u-circle-progress/u-circle-progress"
+  }
 }

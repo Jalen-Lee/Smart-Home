@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-number-box": "/node-modules/uview-ui/components/u-number-box/u-number-box",
+    "u-switch": "/node-modules/uview-ui/components/u-switch/u-switch",
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+    "u-slider": "/node-modules/uview-ui/components/u-slider/u-slider"
+  }
+}

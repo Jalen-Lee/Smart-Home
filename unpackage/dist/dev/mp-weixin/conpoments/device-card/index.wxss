@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.device-card-wrapper {
+  width: calc((100vw - 60rpx) / 2 - 20rpx);
+  height: 500rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-border-radius: 12rpx;
+          border-radius: 12rpx;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  padding: 16rpx;
+}
+.device-card-wrapper .header {
+  width: 100%;
+  height: 40rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.device-card-wrapper .header .title {
+  color: #c9ccd3;
+  font-size: 24rpx;
+}
+.device-card-wrapper .main {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.device-card-wrapper .main .sensor-icon {
+  color: #407ee5;
+  font-size: 120rpx;
+}
+.device-card-wrapper .main .sensor-name {
+  color: #142035;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+}
+.device-card-wrapper .main .sensor-status {
+  color: #c9ccd3;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.device-card-wrapper .footer {
+  width: 100%;
+  height: 40rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  color: #c9ccd3;
+  font-size: 24rpx;
+}
+

@@ -13,7 +13,7 @@ export async function getSingleDeviceDatas(){
 			"userId": store.state.userId,//用户Id必传参数
 			"deviceNo": store.state.deviceNo,//设备序列号 设备Id序列号二选一
 			"currPage": 1,  //当前页 必选参数
-			"pageSize": 20 //每页返回的记录数，必选擦数，最多不能超过1000
+			"pageSize": 30 //每页返回的记录数，必选擦数，最多不能超过1000
 		},
 		custom:{
 			auth: true
@@ -81,7 +81,27 @@ export async function getSensorHistroy(sensorId,config){
 			pageSize: config.pageSize || 100 //返回的数据条数
 		},
 		custom:{
-			auth:true
+			auth:true,
+		}
+	})
+}
+
+/* 
+ * @URI: http://api.tlink.io/api/device/sendDataPoint
+ * @INFO: 传感器数据上传到控制中心
+ * @param: sensorDatas传感器数据列表
+ */
+export async function sendDataPoint(sensorDatas){
+	return http.request({
+		method:'POST',
+		url:'/api/device/sendDataPoint',
+		data:{
+			  userId: store.state.userId,  //用户Id,必选
+			  deviceNo : store.state.deviceNo,  //设备序列号，必选
+			  sensorDatas //要上传的的传感器数据列表
+		},
+		custom:{
+			auth:true,
 		}
 	})
 }
